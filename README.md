@@ -1,4 +1,4 @@
-# JSL04 Project Brief: Dynamic Task Display & Modal Editing
+# JSL04 Project Brief: Dynamic Task Display & Modal View
 
 ## Overview
 
