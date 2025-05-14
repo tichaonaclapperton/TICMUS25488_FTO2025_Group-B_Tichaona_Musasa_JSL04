@@ -6,7 +6,11 @@ In this project, you will dynamically display tasks from the **given initial dat
 
 ## Before You Begin
 
-**Check the project user stories in your student dashboard** before you start building.
+**Check the project user stories in your student dashboard and the updated Figma Design** before you start building.
+
+## Figma Design Link
+
+Check the updated Figma Design: [Figma Link](https://www.figma.com/design/y7bFCUYL5ZHfPeojACBXg2/Challenges-%7C-JSL?node-id=0-1&p=f&t=Ki0CZk0RAjrk9Fhs-0)
 
 ## Key Objectives
 
