@@ -84,6 +84,29 @@
         </main>
       </div>
     </div>
+
+        <!-- modal structure and the inputs -->
+
+    <div id="modal" class="modal" style="display: none"> <!--hiding the modal from the page -->
+			<div id="modal-content" class="modal-content">
+				<button id="close-modal" class="close-btn">✖</button>
+				<h1 id="modal-heading">Task</h1>
+
+        <!-- all the inputs for the modal -->
+         
+        <label>Title</label><br>
+        <input type="text" id="taskTitleInput" ><br><br>
+        <label >Description</label><br>
+        <textarea  id="taskDescriptionInput" rows="6"></textarea><br><br>
+
+        <label>Status</label><br>
+        <select id="taskStatusInput">
+          <option value="doing">Doing</option>
+          <option value="done">Done</option>
+          <option value="todo">Todo</option>
+        </select><br><br>
+			</div>
+		</div>
     <script type="module" src="./scripts.js"></script>
   </body>
 </html>
