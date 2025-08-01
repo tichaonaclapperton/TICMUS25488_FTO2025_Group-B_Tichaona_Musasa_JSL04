@@ -14,8 +14,8 @@ const renderTasks = (tasks) => {
 		container.innerHTML = "";
 	});
 
-  // creating div element that will take the tasks
-  
+	// creating div element that will take the tasks
+
 	tasks.forEach((task) => {
 		const taskDiv = document.createElement("div");
 		taskDiv.className = "task-div";
@@ -31,3 +31,13 @@ const renderTasks = (tasks) => {
 		if (container) container.appendChild(taskDiv);
 	});
 };
+//  Function linked to the modal that gives modal information from the data given
+
+function openModal(taskElement) {
+	selectedTask = taskElement;
+	taskInput.value = taskElement.textContent;
+	taskDiscriptionInput.value = taskElement.dataset.description;
+
+	// changing modal from hidding to display
+	modal.style.display = "flex";
+}
