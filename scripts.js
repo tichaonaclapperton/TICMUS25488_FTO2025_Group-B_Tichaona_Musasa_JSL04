@@ -7,7 +7,7 @@ const modal = document.getElementById("modal");
 const taskInput = document.getElementById("taskTitleInput");
 const taskDiscriptionInput = document.getElementById("taskDescriptionInput");
 const closeModalBtn = document.getElementById("close-modal");
-const taskStatusInput = document.getElementById('taskStatusInput');
+const taskStatusInput = document.getElementById("taskStatusInput");
 
 const renderTasks = (tasks) => {
 	// Clear all existing tasks
@@ -22,7 +22,7 @@ const renderTasks = (tasks) => {
 		taskDiv.className = "task-div";
 		taskDiv.textContent = task.title;
 		taskDiv.dataset.description = task.description;
-    taskDiv.dataset.status = task.status;
+		taskDiv.dataset.status = task.status;
 
 		// Add click listener to open modal for editing
 		taskDiv.addEventListener("click", () => openModal(taskDiv));
@@ -39,7 +39,7 @@ function openModal(taskElement) {
 	selectedTask = taskElement;
 	taskInput.value = taskElement.textContent;
 	taskDiscriptionInput.value = taskElement.dataset.description;
-  taskStatusInput.value = taskElement.dataset.status;
+	taskStatusInput.value = taskElement.dataset.status;
 
 	// changing modal from hidding to display
 	modal.style.display = "flex";
@@ -50,6 +50,14 @@ function openModal(taskElement) {
 closeModalBtn.addEventListener("click", () => {
 	modal.style.display = "none";
 	selectedTask = null;
+});
+
+// if you click outside the modal the modal will close
+
+window.addEventListener("click", function (event) {
+	if (event.target === modal) {
+		modal.style.display = "none";
+	}
 });
 
 // making sure that javascript runs after DOM is ready
