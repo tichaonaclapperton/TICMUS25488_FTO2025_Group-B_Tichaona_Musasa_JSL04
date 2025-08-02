@@ -1,13 +1,28 @@
 import { initialTasks } from "./initialData.js";
 
-// *****getting hold of the modal part through their IDs*******
+
+
+/**
+ * @type {HTMLElement|null}
+ * The currently selected task element for editing.
+ */
 
 let selectedTask = null;
+
+// *****getting DOM elements*******
+
+/** @type {HTMLDivElement} */
 const modal = document.getElementById("modal");
+/** @type {HTMLDivElement} */
 const taskInput = document.getElementById("taskTitleInput");
+/** @type {HTMLDivElement} */
 const taskDiscriptionInput = document.getElementById("taskDescriptionInput");
+/** @type {HTMLDivElement} */
 const closeModalBtn = document.getElementById("close-modal");
+/** @type {HTMLDivElement} */
 const taskStatusInput = document.getElementById("taskStatusInput");
+
+// Render all tasks to their respective containers.
 
 const renderTasks = (tasks) => {
 	// Clear all existing tasks
@@ -15,7 +30,7 @@ const renderTasks = (tasks) => {
 		container.innerHTML = "";
 	});
 
-	// creating div element that will take the tasks
+	// creating div element for each task, asign className (task-div) for styling and sets data-description and data-status so that i can access it later
 
 	tasks.forEach((task) => {
 		const taskDiv = document.createElement("div");
@@ -25,14 +40,34 @@ const renderTasks = (tasks) => {
 		taskDiv.dataset.status = task.status;
 
 		// Add click listener to open modal for editing
-		taskDiv.addEventListener("click", () => openModal(taskDiv));
+		taskDiv.addEventListener("click", function () {
+      openModal(this); 
+    });
 
 		const container = document.querySelector(
 			`.tasks-container[data-status="${task.status}"]`
 		);
 		if (container) container.appendChild(taskDiv);
 	});
+	updateColumnHeaders(tasks);
 };
+
+/**
+ * Update the header text for each status column with task count.
+ * @param {Array<Object>} tasks - List of all tasks.
+ */
+
+const updateColumnHeaders = (tasks) => {
+	const statuses = ["todo", "doing", "done"];
+	statuses.forEach((status) => {
+		const count = tasks.filter((task) => task.status === status).length;
+		document.getElementById(
+			`${status}Text`
+		).textContent = `${status.toUpperCase()} (${count})`;
+	});
+};
+
+
 //  Function linked to the modal that gives modal information from the data given
 
 function openModal(taskElement) {
