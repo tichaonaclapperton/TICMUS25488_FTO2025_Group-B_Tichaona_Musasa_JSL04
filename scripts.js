@@ -7,6 +7,7 @@ const modal = document.getElementById("modal");
 const taskInput = document.getElementById("taskTitleInput");
 const taskDiscriptionInput = document.getElementById("taskDescriptionInput");
 const closeModalBtn = document.getElementById("close-modal");
+const taskStatusInput = document.getElementById('taskStatusInput');
 
 const renderTasks = (tasks) => {
 	// Clear all existing tasks
@@ -21,6 +22,7 @@ const renderTasks = (tasks) => {
 		taskDiv.className = "task-div";
 		taskDiv.textContent = task.title;
 		taskDiv.dataset.description = task.description;
+    taskDiv.dataset.status = task.status;
 
 		// Add click listener to open modal for editing
 		taskDiv.addEventListener("click", () => openModal(taskDiv));
@@ -37,6 +39,7 @@ function openModal(taskElement) {
 	selectedTask = taskElement;
 	taskInput.value = taskElement.textContent;
 	taskDiscriptionInput.value = taskElement.dataset.description;
+  taskStatusInput.value = taskElement.dataset.status;
 
 	// changing modal from hidding to display
 	modal.style.display = "flex";
