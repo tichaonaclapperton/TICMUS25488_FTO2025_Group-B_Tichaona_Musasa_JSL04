@@ -41,3 +41,16 @@ function openModal(taskElement) {
 	// changing modal from hidding to display
 	modal.style.display = "flex";
 }
+
+// The function that closes the modal when the close button is clicked
+
+closeModalBtn.addEventListener("click", () => {
+	modal.style.display = "none";
+	selectedTask = null;
+});
+
+// making sure that javascript runs after DOM is ready
+
+document.addEventListener("DOMContentLoaded", () => {
+	renderTasks(initialTasks);
+});
