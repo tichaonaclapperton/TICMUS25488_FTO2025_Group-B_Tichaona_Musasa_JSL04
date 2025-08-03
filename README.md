@@ -35,6 +35,18 @@ Check the updated Figma Design: [Figma Link](https://www.figma.com/design/y7bFCU
 - Use **descriptive and meaningful variable and function names** for clarity.
 - Add **JSDoc comments** to major functions, describing their purpose, parameters, and return values for better documentation.
 
+## 🚀 How to Run
+
+1. **Clone** or **download** this repository.
+2. Open `index.html` in your web browser.
+3. You’ll see a **task board** with some default tasks.
+4. **Click a task** to open it in a modal and edit its content.
+
+> ✅ No build tools or backend required. Everything runs in the browser.
+
+
+
+
 ## Expected Outcome
 
 A fully functional **dynamic task board** where tasks appear under the correct columns, and users can **open a modal to view/edit** task details. The project will follow **clean, well-documented, and maintainable code practices**, ensuring a professional and scalable implementation.
