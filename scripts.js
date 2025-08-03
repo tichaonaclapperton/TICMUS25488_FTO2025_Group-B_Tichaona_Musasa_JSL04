@@ -1,7 +1,5 @@
 import { initialTasks } from "./initialData.js";
 
-
-
 /**
  * @type {HTMLElement|null}
  * The currently selected task element for editing.
@@ -41,8 +39,8 @@ const renderTasks = (tasks) => {
 
 		// Add click listener to open modal for editing
 		taskDiv.addEventListener("click", function () {
-      openModal(this); 
-    });
+			openModal(this);
+		});
 
 		const container = document.querySelector(
 			`.tasks-container[data-status="${task.status}"]`
@@ -66,7 +64,6 @@ const updateColumnHeaders = (tasks) => {
 		).textContent = `${status.toUpperCase()} (${count})`;
 	});
 };
-
 
 //  Function linked to the modal that gives modal information from the data given
 
